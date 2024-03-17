@@ -10,6 +10,7 @@ This reading log is for my bookworm daughters. My eldest🚀 is an avid reader a
 
 ### MVP
 
+- Profile Page
 - Book search
 - Saved book list
 - Page Count
@@ -17,9 +18,9 @@ This reading log is for my bookworm daughters. My eldest🚀 is an avid reader a
 
 ### Stretch Goals
 
-- Profile Page
 - Overall page count
 - Sorted Fact/Fiction
+- Rating
 
 ---
 
