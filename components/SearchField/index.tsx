@@ -1,21 +1,18 @@
 import { LiaSearchSolid } from "react-icons/lia";
 import Button from "../Button";
-import { FormEventHandler, useState } from "react";
-
+import { useState } from "react";
 type SearchProps = {
   onSearch: (value: string) => void;
 };
-
 const SearchField = ({ onSearch }: SearchProps) => {
   const [searchValue, setSearchValue] = useState("");
   const onSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     onSearch(searchValue);
   };
-
   return (
     <form
-      className="flex flex-row border-solid border-black border rounded py-1 px-2"
+      className=" border-solid border-black border rounded py-1 px-2 w-[300px]"
       onSubmit={onSubmitHandler}
     >
       <input
