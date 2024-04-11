@@ -12,18 +12,23 @@ const SearchField = ({ onSearch }: SearchProps) => {
   };
   return (
     <form
-      className=" border-solid border-black border rounded py-1 px-2 w-[300px]"
+      className=" flex items-center border border-gray-300 rounded-2xl px-2 py-1 w-[300px]"
       onSubmit={onSubmitHandler}
     >
       <input
         id="book-search"
         name="book-search"
-        className="outline-none"
+        className="flex-grow outline-none px-2 py-1"
         onChange={(event) => {
           setSearchValue(event.target.value);
         }}
       ></input>
-      <Button type="submit" icon={<LiaSearchSolid />} onClick={() => {}} />
+      <Button
+        type="submit"
+        className="flex-none ml-2"
+        icon={<LiaSearchSolid className="w-6 h-6 text-gray-600" />}
+        onClick={() => {}}
+      />
     </form>
   );
 };

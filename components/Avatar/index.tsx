@@ -8,14 +8,22 @@ type AvatarProps = {
   height: number;
 };
 
-export default function Avatar() {
+export default function Avatar({
+  className,
+  src,
+  alt,
+  width,
+  height,
+}: AvatarProps) {
   return (
     <Image
-      src="/avatar.png"
-      width={100}
-      height={100}
-      alt="Avatar"
-      className="w-[100px] h-[100px] rounded-full border-solid border-black border-2 flex justify-end"
+      src={src}
+      width={width}
+      height={width}
+      alt={alt}
+      className={className}
     />
   );
 }
+
+//

@@ -9,6 +9,7 @@ type LinkButtonProps = {
   onClick?: never;
   icon?: never;
   type?: ButtonType;
+  className: string;
 };
 
 type NormalButtonProps = {
@@ -17,6 +18,7 @@ type NormalButtonProps = {
   href?: never;
   icon?: never;
   type?: ButtonType;
+  className: string;
 };
 
 type IconButtonProps = {
@@ -25,6 +27,7 @@ type IconButtonProps = {
   text?: never;
   href?: never;
   type?: ButtonType;
+  className: string;
 };
 
 type ButtonProps = LinkButtonProps | NormalButtonProps | IconButtonProps;
@@ -35,14 +38,14 @@ const Button = ({
   href,
   icon,
   type = "button",
+  className,
 }: ButtonProps) => {
   const StyledButton = () => (
     <button
       type={type}
-      // className="border-solid border-black border rounded py-1 px-2"
       className={classNames(
         "rounded py-1 px-2",
-        text && "border-solid border-black border"
+        text && "border-solid border-gray-300 rounded-2xl border"
       )}
     >
       {icon ?? text}
