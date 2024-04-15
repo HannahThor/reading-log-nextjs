@@ -1,3 +1,4 @@
+"use client";
 import { LiaSearchSolid } from "react-icons/lia";
 import Button from "../Button";
 import { useState } from "react";
