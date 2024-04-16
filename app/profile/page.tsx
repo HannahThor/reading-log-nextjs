@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import Avatar from "@/components/Avatar";
 import Link from "next/link";
+import BookCollection from "@/components/BookCollection";
 
 const Profile = () => {
   return (
@@ -26,7 +27,9 @@ const Profile = () => {
         className="rounded-full border-solid border-black border-1 flex justify-end"
       />
       <p className="text-lg font-light py-5">Your page count is ...</p>
-      <h3>From your collection</h3>
+      <section>
+        <BookCollection />
+      </section>
     </div>
   );
 };

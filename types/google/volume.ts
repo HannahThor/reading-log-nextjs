@@ -1,4 +1,4 @@
-export type BookData = {
+export type GoogleBookData = {
   id: string;
   volumeInfo: {
     title: string;

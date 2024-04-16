@@ -1,16 +1,16 @@
 "use client";
 import Button from "@/components/Button";
 import { BookHistoryRequest } from "@/types/api/bookhistory";
-import { BookData } from "@/types/google/volume";
+import { GoogleBookData } from "@/types/google/volume";
 import SearchField from "../SearchField";
 import { useState } from "react";
 
 type BookDataResponse = {
-  items: BookData[];
+  items: GoogleBookData[];
 };
 
 const BookSearch = () => {
-  const [searchResults, setSearchResuls] = useState<BookData[]>();
+  const [searchResults, setSearchResuls] = useState<GoogleBookData[]>();
   const onSearchHandler = async (value: string) => {
     const bookResponse = await fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${value}`
@@ -29,10 +29,9 @@ const BookSearch = () => {
     // call history endpoint api/history(POST)
     const request: BookHistoryRequest = {
       google_book_id: id,
-      user_id: "Hannah",
     };
     console.log(request);
-    const response = await fetch("/api/history", {
+    const response = await fetch("/api/user/Hannah/history", {
       method: "POST",
       body: JSON.stringify(request),
     });
