@@ -15,21 +15,34 @@ const BookCollection = () => {
   }, []);
 
   return (
-    <>
-      {bookCollection?.map((book, index) => (
-        <div key={index}>
-          <img
-            className="w-100 h-auto mx-4"
-            src={book.volumeInfo.imageLinks?.thumbnail ?? "/flowerBook.jpg"}
-            alt="Book Cover"
-          />
-          <p>{book.volumeInfo?.title}</p>
-          <p className="text-sm text-gray-600">
-            {book.volumeInfo.authors?.join(", ")}
-          </p>
-        </div>
-      ))}
-    </>
+    <section className=" overflow-x-auto w-3/5 m-10">
+      <div className="flex">
+        {bookCollection?.map((book, index) => (
+          <div key={index} className="flex mx-4 w-32">
+            <div className="max-w-xs rounded overflow-hidden shadow-lg">
+              <img
+                className=""
+                src={book.volumeInfo.imageLinks?.thumbnail ?? "/flowerBook.jpg"}
+                alt="Book Cover"
+                width={100}
+                height={190}
+              />
+              <div className="px-6 py-4">
+                <p className="font-bold text-sm mb-2">
+                  {book.volumeInfo?.title}
+                </p>
+                <p className="text-gray-700 font-semibold text-xs">
+                  {book.volumeInfo.authors?.join(", ")}
+                </p>
+                <p className="text-gray-700 text-xs">
+                  {book.volumeInfo.pageCount} pages
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

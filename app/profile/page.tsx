@@ -28,9 +28,8 @@ const Profile = () => {
         className="rounded-full border-solid border-black border-1 flex justify-end"
       />
       <p className="text-lg font-light py-5">Your page count is ...</p>
-      <section>
-        <BookCollection />
-      </section>
+
+      <BookCollection />
     </div>
   );
 };
