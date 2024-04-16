@@ -4,6 +4,7 @@ import { BookHistoryRequest } from "@/types/api/bookhistory";
 import { GoogleBookData } from "@/types/google/volume";
 import SearchField from "../SearchField";
 import { useState } from "react";
+import Image from "next/image";
 
 type BookDataResponse = {
   items: GoogleBookData[];
@@ -40,7 +41,7 @@ const BookSearch = () => {
       console.error("Failed to add book");
     }
   };
-
+  console.log(searchResults);
   return (
     <>
       <main className="flex flex-col py-10">
@@ -50,10 +51,12 @@ const BookSearch = () => {
         {/* Map over the bookData and display the book title and author */}
         {searchResults?.map((result, index) => (
           <div key={index} className="flex items-start mb-4">
-            <img
+            <Image
               className="w-100 h-auto mx-4"
-              src={result.volumeInfo.imageLinks?.thumbnail}
+              src={result.volumeInfo.imageLinks?.thumbnail ?? "/flowerBook.jpg"}
               alt="Book Cover"
+              width={128}
+              height={196}
             />
             <div className="flex flex-col">
               <h3 className="text-lg font-semibold">
@@ -64,6 +67,9 @@ const BookSearch = () => {
               </p>
               <p className="text-xs font-light">
                 {result.volumeInfo.description}
+              </p>
+              <p className="text-xs font-light">
+                Page Count: {result.volumeInfo.pageCount}
               </p>
             </div>{" "}
             {/* <Button text="Add"  type="submit"/> */}

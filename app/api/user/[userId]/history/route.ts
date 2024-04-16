@@ -12,7 +12,7 @@ export const POST = async (request: Request) => {
   const requestBody = (await request.json()) as BookHistoryRequest;
   // example /api/user/1/history
 
-  const userId = request.url.split("/")[3];
+  const userId = request.url.split("/")[5];
   try {
     const { data, error } = await supabase
       .from("reading_history")
@@ -66,7 +66,7 @@ export const GET = async (request: Request) => {
     }
 
     // return data;
-    return NextResponse.json({ data: googleBooks });
+    return NextResponse.json(googleBooks);
   } catch (error) {
     console.error("Error fetching data:", error);
     return NextResponse.error();

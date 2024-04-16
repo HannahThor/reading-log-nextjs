@@ -6,12 +6,31 @@ const BookCollection = () => {
 
   // /api/user/Hannah/history(GET)
   useEffect(() => {
-    fetch("/api/user/Hannah/history");
-  });
+    const fetchData = async () => {
+      const response = await fetch("/api/user/Hannah/history");
+      const jsonData = await response.json();
+      setBookCollection(jsonData);
+    };
+    fetchData();
+  }, []);
 
-  return bookCollection?.map((book) => {
-    <p>{book.volumeInfo.title}</p>;
-  });
+  return (
+    <>
+      {bookCollection?.map((book, index) => (
+        <div key={index}>
+          <img
+            className="w-100 h-auto mx-4"
+            src={book.volumeInfo.imageLinks?.thumbnail ?? "/flowerBook.jpg"}
+            alt="Book Cover"
+          />
+          <p>{book.volumeInfo?.title}</p>
+          <p className="text-sm text-gray-600">
+            {book.volumeInfo.authors?.join(", ")}
+          </p>
+        </div>
+      ))}
+    </>
+  );
 };
 
 export default BookCollection;

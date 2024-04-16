@@ -7,5 +7,6 @@ export type GoogleBookData = {
       thumbnail: string;
     };
     description: string;
+    pageCount: number;
   };
 };

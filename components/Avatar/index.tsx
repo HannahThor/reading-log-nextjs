@@ -17,7 +17,7 @@ export default function Avatar({
 }: AvatarProps) {
   return (
     <Image
-      src={src}
+      src={src || src}
       width={width}
       height={width}
       alt={alt}
