@@ -45,7 +45,8 @@ const Button = ({
       type={type}
       className={classNames(
         "rounded py-1 px-2",
-        text && "border-solid border-gray-300 rounded-2xl border"
+        text && "border-solid border-gray-300 rounded-2xl border",
+        className
       )}
       onClick={onClick}
     >
