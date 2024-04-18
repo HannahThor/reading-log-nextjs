@@ -1,10 +1,11 @@
 # Reading Log 📚
 
-<img src="public/MagicBookQuest.jpg" width="400" height="400">
+![Magic Book Quest](https://github.com/HannahThor/reading-log-nextjs/assets/74144109/71c7975c-9917-4533-bb47-4385e5710f5c)
 
 This reading log is for my bookworm daughters. My eldest🚀 is an avid reader and totally obsessed with the number of pages she's read. Her little sister🦄 is following in her footsteps and so I've decided to make a reading log for thier home reading.
 
 ---
+
 
 ## Features
 
