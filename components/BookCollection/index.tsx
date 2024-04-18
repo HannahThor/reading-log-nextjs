@@ -21,11 +21,9 @@ const BookCollection = () => {
           <div key={index} className="flex mx-4 w-32">
             <div className="max-w-xs rounded overflow-hidden shadow-lg">
               <img
-                className=""
+                className="max-w-[120px] h-auto"
                 src={book.volumeInfo.imageLinks?.thumbnail ?? "/flowerBook.jpg"}
                 alt="Book Cover"
-                width={100}
-                height={190}
               />
               <div className="px-6 py-4">
                 <p className="font-bold text-sm mb-2">

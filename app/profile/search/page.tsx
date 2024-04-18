@@ -13,10 +13,8 @@ const Search = () => {
         <Link href="/profile">
           <Avatar
             src="/ProfileAvatar.png"
-            width={50}
-            height={50}
             alt="Profile Avatar"
-            className="rounded-full border-solid border-black border-1 "
+            className="w-[100px] h-auto rounded-full border-solid border-black border-1 "
           />
         </Link>
       </nav>

@@ -3,9 +3,23 @@
 @tailwind utilities;
 
 /* Change the white to any color */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #540d6e inset !important;
+  background-color: transparent !important;
+}
+
+/* Set background color of input field */
+input {
+  background-color: transparent !important;
+}
+
+/* Set background color of autofilled input */
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+}
+
+@layer base {
+  html {
+    @apply text-white;
+  }
 }

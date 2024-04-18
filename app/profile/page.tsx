@@ -12,20 +12,16 @@ const Profile = () => {
         <Link href="/profile/search">
           <Avatar
             src="/books.png"
-            width={50}
-            height={50}
             alt="Book Search"
-            className="rounded-full border-solid border-black border-1 "
+            className="w-[100px] h-auto rounded-full"
           />
         </Link>
       </nav>
       <h1 className="text-xl font-light py-5">Hi, Enchanted Reader</h1>
       <Avatar
         src="/ProfileAvatar.png"
-        width={200}
-        height={200}
         alt="Profile Avatar"
-        className="rounded-full border-solid border-black border-1 flex justify-end"
+        className="w-[200px] h-auto rounded-full border-solid border-black border-1 flex justify-end"
       />
       <p className="text-lg font-light py-5">Your page count is ...</p>
 
