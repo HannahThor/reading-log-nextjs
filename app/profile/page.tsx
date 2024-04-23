@@ -1,14 +1,20 @@
 "use client";
-import Button from "@/components/Button";
+
 import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import BookCollection from "@/components/BookCollection";
+import { ButtonShadcn } from "@/components/ui/buttonshadcn";
 
 const Profile = () => {
   return (
     <div className="px-3 flex flex-col items-center justify-center p-5">
       <nav className="flex flex-row justify-between w-full mb-4 px-5">
-        <Button text="Back" href="/" type="button" />
+        <Link href="/">
+          <ButtonShadcn variant="outline" size="sm">
+            Home
+          </ButtonShadcn>
+        </Link>
+
         <Link href="/profile/search">
           <Avatar
             src="/books.png"

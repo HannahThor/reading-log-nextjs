@@ -4,6 +4,7 @@ import { BookHistoryRequest } from "@/types/api/bookhistory";
 import { GoogleBookData } from "@/types/google/volume";
 import SearchField from "../SearchField";
 import { useState } from "react";
+import { ButtonShadcn } from "../ui/buttonshadcn";
 
 type BookDataResponse = {
   items: GoogleBookData[];
@@ -70,11 +71,12 @@ const BookSearch = () => {
               </p>
             </div>{" "}
             {/* <Button text="Add"  type="submit"/> */}
-            <Button
-              type="button"
-              text="Add"
+            <ButtonShadcn
+              variant="outline"
               onClick={() => handleSubmit(result.id)}
-            />
+            >
+              Add
+            </ButtonShadcn>
           </div>
         ))}
       </section>

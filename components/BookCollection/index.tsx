@@ -1,5 +1,20 @@
 import { GoogleBookData } from "@/types/google/volume";
 import { useEffect, useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const BookCollection = () => {
   const [bookCollection, setBookCollection] = useState<GoogleBookData[]>();
@@ -15,31 +30,42 @@ const BookCollection = () => {
   }, []);
 
   return (
-    <section className=" overflow-x-auto w-3/5 m-10">
-      <div className="flex">
-        {bookCollection?.map((book, index) => (
-          <div key={index} className="flex mx-4 w-32">
-            <div className="max-w-xs rounded overflow-hidden shadow-lg">
-              <img
-                className="max-w-[120px] h-auto"
-                src={book.volumeInfo.imageLinks?.thumbnail ?? "/flowerBook.jpg"}
-                alt="Book Cover"
-              />
-              <div className="px-6 py-4">
-                <p className="font-bold text-sm mb-2">
-                  {book.volumeInfo?.title}
-                </p>
-                <p className="text-gray-700 font-semibold text-xs">
-                  {book.volumeInfo.authors?.join(", ")}
-                </p>
-                <p className="text-gray-700 text-xs">
-                  {book.volumeInfo.pageCount} pages
-                </p>
+    <section className="flex justify-center w-full h-full">
+      <Carousel className="w-4/5 max-w-screen-xl">
+        <CarouselContent className="flex justify-between">
+          {bookCollection?.map((book, index) => (
+            <CarouselItem key={index} className="basis-1/4 h-">
+              <div className="p-1">
+                <Card className="flex flex-col items-center justify-between p-6 h-full">
+                  <CardHeader>
+                    <CardTitle className="text-sm">
+                      {book.volumeInfo?.title}
+                    </CardTitle>
+                    <CardDescription className="text-sm">
+                      {book.volumeInfo.authors?.join(", ")}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex justify-center items-center flex-grow">
+                    <img
+                      className="w-auto h-[150px]"
+                      src={
+                        book.volumeInfo.imageLinks?.thumbnail ??
+                        "/flowerBook.jpg"
+                      }
+                      alt="Book Cover"
+                    />
+                  </CardContent>
+                  <CardFooter className="text-sm">
+                    {book.volumeInfo.pageCount} pages
+                  </CardFooter>
+                </Card>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </section>
   );
 };

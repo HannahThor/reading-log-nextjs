@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-purple">
+    <html lang="en" className="">
       <body>
         {/* Layout UI */}
         <main>{children}</main>

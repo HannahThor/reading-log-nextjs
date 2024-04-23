@@ -1,22 +1,26 @@
 import Avatar from "@/components/Avatar";
-import Button from "@/components/Button";
+import { ButtonShadcn } from "@/components/ui/buttonshadcn";
+import Link from "next/link";
 
 const LandingPage = () => {
   return (
     <main className="flex flex-col items-center justify-center">
       <Avatar
-        src="/MagicBookQuest.jpg"
+        src="/MagicBookQuest.png"
         alt="Profile Avatar"
         className="w-[500px] h-auto flex justify-end pt-20 pb-2"
       />
-      <div className="py-2 flex flex-row justify-between w-60">
-        <Button
-          text="Profile"
-          href="/profile"
-          type="button"
-          className="bg-teal text-bold"
-        />
-        <Button text="Add New Book" href="/profile/search" type="button" />
+      <div className="flex justify-between w-70">
+        <Link href="/profile">
+          <ButtonShadcn variant="outline" size="lg">
+            Profile
+          </ButtonShadcn>
+        </Link>
+        <Link href="/profile/search">
+          <ButtonShadcn variant="outline" size="lg">
+            Add Book
+          </ButtonShadcn>
+        </Link>
       </div>
     </main>
   );
