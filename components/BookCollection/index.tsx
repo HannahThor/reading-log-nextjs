@@ -48,17 +48,18 @@ const BookCollection = () => {
   return (
     <>
       <p className="text-lg font-light py-5">
-        Your page count is {totalPageCount}
+        Your page count is{" "}
+        <span className="text-xl font-semibold">{totalPageCount}</span>
       </p>
       <section className="flex justify-center w-full h-full">
         <Carousel className="w-4/5 max-w-screen-xl">
           <CarouselContent className="flex justify-between">
             {bookCollection?.map((book, index) => (
-              <CarouselItem key={index} className="md:basis-1/4 lg:basis-1/4">
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
                 {" "}
                 {/* Added prefix for responsiveness */}
                 <div className="p-1">
-                  <Card className="flex flex-col items-center justify-between p-6 h-full">
+                  <Card className="flex flex-col items-center justify-between p-6 h-[396px] w-[300px] max-w-full">
                     <CardHeader>
                       <CardTitle className="text-sm">
                         {book.volumeInfo?.title}
@@ -78,7 +79,7 @@ const BookCollection = () => {
                       />
                     </CardContent>
                     <CardFooter className="text-sm">
-                      {book.volumeInfo.pageCount} pages
+                      Page Count: {book.volumeInfo.pageCount}
                     </CardFooter>
                   </Card>
                 </div>

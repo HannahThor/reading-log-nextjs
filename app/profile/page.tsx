@@ -29,7 +29,6 @@ const Profile = () => {
         alt="Profile Avatar"
         className="w-[200px] h-auto rounded-full border-solid border-black border-1 flex justify-end"
       />
-
       <BookCollection />
     </div>
   );
