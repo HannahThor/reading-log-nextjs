@@ -29,7 +29,6 @@ const Profile = () => {
         alt="Profile Avatar"
         className="w-[200px] h-auto rounded-full border-solid border-black border-1 flex justify-end"
       />
-      <p className="text-lg font-light py-5">Your page count is ...</p>
 
       <BookCollection />
     </div>
