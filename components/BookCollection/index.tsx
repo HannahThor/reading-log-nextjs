@@ -59,7 +59,7 @@ const BookCollection = () => {
                 {" "}
                 {/* Added prefix for responsiveness */}
                 <div className="p-1">
-                  <Card className="flex flex-col items-center justify-between p-6 h-[396px] w-[300px] max-w-full">
+                  <Card className="flex flex-col items-center justify-between p-6 h-[396px] w-[300px] max-w-full bg-card text-card-foreground shadow">
                     <CardHeader>
                       <CardTitle className="text-sm">
                         {book.volumeInfo.title}

@@ -10,7 +10,11 @@ const Search = () => {
     <div className="px-3 flex flex-col items-center justify-center p-5">
       <nav className="flex flex-row justify-between w-full mb-4 px-5">
         <Link href="/">
-          <ButtonShadcn variant="outline" size="sm">
+          <ButtonShadcn
+            variant="outline"
+            size="sm"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90"
+          >
             Home
           </ButtonShadcn>
         </Link>
