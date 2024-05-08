@@ -59,7 +59,6 @@ export const GET = async (request: Request) => {
         `https://www.googleapis.com/books/v1/volumes/${currentBookHistory.google_book_id}`
       );
 
-      console.log(bookResponse.status);
       const bookData = (await bookResponse.json()) as GoogleBookData;
       // put data into array
       googleBooks.push(bookData);

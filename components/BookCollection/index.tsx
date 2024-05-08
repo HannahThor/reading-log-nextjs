@@ -62,7 +62,7 @@ const BookCollection = () => {
                   <Card className="flex flex-col items-center justify-between p-6 h-[396px] w-[300px] max-w-full">
                     <CardHeader>
                       <CardTitle className="text-sm">
-                        {book.volumeInfo?.title}
+                        {book.volumeInfo.title}
                       </CardTitle>
                       <CardDescription className="text-sm">
                         {book.volumeInfo.authors?.join(", ")}

@@ -5,13 +5,20 @@ import { GoogleBookData } from "@/types/google/volume";
 import SearchField from "../SearchField";
 import { useState } from "react";
 import { ButtonShadcn } from "../ui/buttonshadcn";
+import { ToastAction } from "../ui/toast";
+import { useToast } from "../ui/use-toast";
+import { useRouter } from "next/navigation";
 
 type BookDataResponse = {
   items: GoogleBookData[];
 };
 
 const BookSearch = () => {
+  const { toast } = useToast();
+  const router = useRouter();
+
   const [searchResults, setSearchResuls] = useState<GoogleBookData[]>();
+
   const onSearchHandler = async (value: string) => {
     const bookResponse = await fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${value}`
@@ -26,7 +33,6 @@ const BookSearch = () => {
   };
 
   const handleSubmit = async (id: string) => {
-    console.log("hello");
     // call history endpoint api/history(POST)
     const request: BookHistoryRequest = {
       google_book_id: id,
@@ -36,12 +42,32 @@ const BookSearch = () => {
       method: "POST",
       body: JSON.stringify(request),
     });
+    if (response.ok) {
+      toast({
+        title: "Add Successful",
+        description: `View you book collection`,
+        action: (
+          <ToastAction
+            onClick={() => {
+              router.push("/profile");
+            }}
+            altText="Go to profile"
+          >
+            View
+          </ToastAction>
+        ),
+      });
+    }
     // TODO error handling
-    if (!response.ok) {
-      console.error("Failed to add book");
+    else {
+      toast({
+        title: "Error",
+        description: "Unsuccessful",
+      });
     }
   };
   console.log(searchResults);
+
   return (
     <>
       <main className="flex flex-col py-10">
