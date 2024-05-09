@@ -32,7 +32,7 @@ type IconButtonProps = {
 
 type ButtonProps = LinkButtonProps | NormalButtonProps | IconButtonProps;
 
-const Button = ({
+const ButtonOld = ({
   text,
   onClick,
   href,
@@ -63,4 +63,4 @@ const Button = ({
     </Link>
   );
 };
-export default Button;
+export default ButtonOld;

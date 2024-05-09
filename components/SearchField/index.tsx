@@ -1,7 +1,8 @@
 "use client";
 import { LiaSearchSolid } from "react-icons/lia";
-import Button from "../Button";
+
 import { useState } from "react";
+import { Button } from "../ui/button";
 type SearchProps = {
   onSearch: (value: string) => void;
 };
@@ -26,10 +27,13 @@ const SearchField = ({ onSearch }: SearchProps) => {
       ></input>
       <Button
         type="submit"
+        variant="ghost"
         className="flex-none ml-2"
-        icon={<LiaSearchSolid className="w-6 h-6 text-gray-600" />}
+        size="icon"
         onClick={() => {}}
-      />
+      >
+        <LiaSearchSolid className="w-6 h-6 text-gray-600" />
+      </Button>
     </form>
   );
 };

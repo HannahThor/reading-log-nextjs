@@ -1,10 +1,10 @@
 "use client";
-import Button from "@/components/Button";
+
 import { BookHistoryRequest } from "@/types/api/bookhistory";
 import { GoogleBookData } from "@/types/google/volume";
 import SearchField from "../SearchField";
 import { useState } from "react";
-import { ButtonShadcn } from "../ui/buttonshadcn";
+import { Button } from "../ui/button";
 import { ToastAction } from "../ui/toast";
 import { useToast } from "../ui/use-toast";
 import { useRouter } from "next/navigation";
@@ -96,14 +96,13 @@ const BookSearch = () => {
                 Page Count: {result.volumeInfo.pageCount}
               </p>
             </div>{" "}
-            {/* <Button text="Add"  type="submit"/> */}
-            <ButtonShadcn
+            <Button
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90"
               variant="outline"
               onClick={() => handleSubmit(result.id)}
             >
               Add
-            </ButtonShadcn>
+            </Button>
           </div>
         ))}
       </section>
